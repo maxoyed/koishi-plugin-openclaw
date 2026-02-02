@@ -7,11 +7,29 @@ Koishi plugin for connecting to [OpenClaw](https://openclaw.ai) agents.
 ## Usage
 
 1. **Install** the plugin in your Koishi instance.
-2. **Configure** the plugin in the Koishi console:
+2. **Edit** OpenClaw's config file `~/.openclaw/openclaw.json`, add `gateway.http.endpoints.chatCompletions.enabled: true`:
+```json
+{
+  ...
+  "gateway": {
+    ...
+    "http": {
+      "endpoints": {
+        "chatCompletions": {
+          "enabled": true
+        }
+      }
+    },
+    ...
+  }
+  ...
+}
+```
+3. **Configure** the plugin in the Koishi console:
    - `endpoint`: The OpenClaw Gateway OpenAI-compatible endpoint (e.g., `http://127.0.0.1:18789/v1/chat/completions`).
    - `token`: Your OpenClaw API Key (if authentication is enabled).
    - `model`: The agent or model ID to target (default: `agent:defaults`).
-3. **Chat** using the `claw` command:
+4. **Chat** using the `claw` command:
    ```
    claw Hello, how are you?
    ```
